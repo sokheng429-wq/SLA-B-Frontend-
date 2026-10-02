@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import "./styles/clay.css";
+
+/* ==========================================================================
+   Jira Cloud Design System Tokens & Global Styling
+   Pixel-perfect clone specification
+   ========================================================================== */
+
+:root {
+  /* Exact Theme Tokens per prompt */
+  --orange: #FF9900;
+  --green: #77BC1F;
+  --black: #0B0F14;
+  --slate: #232F3F;
+  --col-bg: #141c27;
+  --border: #2f3d50;
+  --text-muted: #8fa0b4;
+  --text-main: #eef2f6;
+
+  /* Fonts */
+  --font-en: 'Inter', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-kh: 'Noto Sans Khmer', 'Kantumruy Pro', sans-serif;
+  --font-sans: 'Inter', 'Nunito', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
+
+  /* Theme Core Palette Aliases */
+  --brand-green: #77BC1F;
+  --brand-green-hover: #65A319;
+  --brand-green-subtle: rgba(119, 188, 31, 0.15);
+  --brand-green-glow: 0 0 20px rgba(119, 188, 31, 0.35);
+
+  --brand-orange: #FF9900;
+  --brand-orange-hover: #E68A00;
+  --brand-orange-subtle: rgba(255, 153, 0, 0.15);
+  --brand-orange-glow: 0 0 20px rgba(255, 153, 0, 0.35);
+
+  --bg-obsidian: #0B0F14;
+  --bg-slate: #232F3F;
+  --bg-slate-light: #2A384A;
+  --bg-slate-dark: #1A232F;
+  --bg-well: #141c27;
+
+  /* Jira Overrides - Now mapped to the new theme */
+  --j-blue: #77BC1F;
+  --j-blue-hover: #65A319;
+  --j-blue-subtle: rgba(119, 188, 31, 0.15);
+  --j-blue-border: #77BC1F;
+
+  --j-text: #FFFFFF;
+  --j-text-secondary: #CBD5E1;
+  --j-text-muted: #94A3B8;
+  --j-text-faint: #64748B;
+
+  --j-bg: #0B0F14;
+  --j-bg-sidebar: #1A232F;
+  --j-bg-column: #16202C;
+  --j-bg-hover: #2A384A;
+  --j-bg-active: rgba(119, 188, 31, 0.18);
+  --j-bg-card: #232F3F;
+
+  --j-border: #2D3D50;
+  --j-border-subtle: #232F3F;
+
+  /* Priority Colors */
+  --j-p1: #FF9900;
+  --j-p2: #FF7B00;
+  --j-p3: #EAB308;
+  --j-p4: #77BC1F;
+
+  /* Work Type Icons */
+  --j-task: #77BC1F;
+  --j-story: #FF9900;
+  --j-bug: #EF4444;
+  --j-subtask: #38BDF8;
+
+  /* Shadows - Rich elevated dark glows */
+  --j-shadow-card: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.08);
+  --j-shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 12px rgba(119, 188, 31, 0.22);
+  --j-shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 2px rgba(255, 153, 0, 0.25);
+  --j-shadow-dropdown: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 1px rgba(255, 255, 255, 0.12);
+
+  /* Radii */
+  --j-radius-sm: 8px;
+  --j-radius-md: 12px;
+  --j-radius-lg: 16px;
+
+  /* Dimensions */
+  --j-topbar-h: 56px;
+  --j-sidebar-w: 240px;
+  --j-col-w: 284px;
+}
+
+/* ==========================================================================
+   Khmer Language Typography Switcher
+   ========================================================================== */
+html[lang="kh"],
+[lang="kh"] body,
+[lang="kh"] * {
+  font-family: var(--font-kh) !important;
+}
+
+html[lang="kh"] {
+  letter-spacing: 0.01em;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--j-bg);
+  color: var(--j-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common Controls */
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--j-blue);
+  outline-offset: 1px;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  color: var(--j-text);
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--j-blue);
+  outline-offset: -1px;
+}
+
+/* Scrollbars - thin Jira style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C1C7D0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5ADBA;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #39424A;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #4A5560;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
