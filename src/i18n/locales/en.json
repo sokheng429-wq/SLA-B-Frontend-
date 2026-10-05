@@ -1,0 +1,88 @@
+{
+  "app": {
+    "title": "SLA B' Groceries INTERNAL",
+    "subtitle": "Internal Ticketing & SLA Tracking System",
+    "company": "B'Groceries Hyperstore (Cambodia)"
+  },
+  "nav": {
+    "board": "Kanban Board",
+    "list": "List View",
+    "dashboard": "SLA Dashboard & Reports",
+    "catalog": "Service Catalog Guide",
+    "raci": "RACI Matrix & Governance",
+    "users": "Manage Users",
+    "admin": "Admin & SLA Policies",
+    "create": "Create",
+    "search": "Search tickets, assignees, keys...",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "logout": "Log Out"
+  },
+  "departments": {
+    "all": "All Departments",
+    "mkt": "Marketing & Communications",
+    "it": "Information Technology",
+    "ops": "Store Operations",
+    "pur": "Purchasing & Sourcing",
+    "fin": "Finance & Accounting",
+    "hr": "Human Resources"
+  },
+  "status": {
+    "SUBMITTED": "Submitted",
+    "BRIEF_CHECK": "Brief Check",
+    "IN_PRODUCTION": "In Production",
+    "IN_REVIEW": "In Review",
+    "APPROVED_DELIVERED": "Approved / Delivered",
+    "WAITING_FOR_REQUESTER": "Waiting for Requester",
+    "REJECTED": "Rejected"
+  },
+  "priority": {
+    "P1": "P1 - Critical (Crisis)",
+    "P2": "P2 - High Priority",
+    "P3": "P3 - Medium (Standard)",
+    "P4": "P4 - Low / Routine"
+  },
+  "sla": {
+    "tat": "Turnaround Time (TAT)",
+    "clock": "SLA Clock",
+    "running": "Clock Running",
+    "paused": "Clock Paused",
+    "breached": "SLA Breached",
+    "delivered": "Delivered on Time",
+    "cutoffNotice": "Daily Cut-off is 3:00 PM (Asia/Phnom_Penh). Submissions after 3 PM count from 08:00 AM next business day.",
+    "rushQuota": "Rush Quota",
+    "rushWarning": "Department has used {{used}} of {{limit}} rush requests this month. Additional rush requires GM Approval.",
+    "autoApproveNotice": "Auto-approval trigger: 48h for creative drafts, 24h for promotional pricing proofs without requester feedback.",
+    "revisionNotice": "Round {{count}} of {{max}} revisions. Round 3+ requires a formal Change Request (+3 business days)."
+  },
+  "ticket": {
+    "createTitle": "Create New Ticket",
+    "id": "Ticket ID",
+    "title": "Ticket Summary / Title",
+    "service": "Service Catalog Deliverable",
+    "department": "Target Department Desk",
+    "requester": "Requester",
+    "assignee": "Assignee",
+    "priority": "Priority Tier",
+    "rush": "Mark as Rush Request (24h TAT)",
+    "gmApproval": "GM Approval Reference / Upload",
+    "brief": "Brief & Creative Specifications",
+    "assets": "Required Assets & Attachments",
+    "uploadFiles": "Upload Assets (Logos, Photos, SKU list)",
+    "comments": "Activity & Comments",
+    "internalComment": "Internal Marketing Ops Note",
+    "publicComment": "Public Stakeholder Comment",
+    "addComment": "Send Comment",
+    "save": "Submit Request",
+    "cancel": "Cancel",
+    "deliverFinal": "Deliver Assets & Complete",
+    "finalDamUrl": "Google Drive / DAM Master Folder URL",
+    "csatTitle": "Rate Your Experience (CSAT)",
+    "csatScore": "Rating (1 to 5 Stars)",
+    "csatFeedback": "Feedback or suggestions"
+  },
+  "rules": {
+    "noBriefNoStart": "No Brief = No Start: Mandatory brief fields and asset files must be complete before moving to In Production.",
+    "rejectReason": "Please specify the rejection reason for the requester:"
+  }
+}

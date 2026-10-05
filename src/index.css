@@ -1,195 +1,128 @@
 @import "tailwindcss";
-@import "./styles/clay.css";
 
-/* ==========================================================================
-   Jira Cloud Design System Tokens & Global Styling
-   Pixel-perfect clone specification
-   ========================================================================== */
+@variant dark (&:where(.dark, .dark *));
 
-:root {
-  /* Exact Theme Tokens per prompt */
-  --orange: #FF9900;
-  --green: #77BC1F;
-  --black: #0B0F14;
-  --slate: #232F3F;
-  --col-bg: #141c27;
-  --border: #2f3d50;
-  --text-muted: #8fa0b4;
-  --text-main: #eef2f6;
+@theme {
+  --color-primary-green: #77BC1F;
+  --color-primary-green-hover: #66A31A;
+  --color-primary-green-light: #F2F9E8;
+  --color-primary-green-subtle: rgba(119, 188, 31, 0.15);
 
-  /* Fonts */
-  --font-en: 'Inter', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-kh: 'Noto Sans Khmer', 'Kantumruy Pro', sans-serif;
-  --font-sans: 'Inter', 'Nunito', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
+  --color-accent-orange: #FF9900;
+  --color-accent-orange-hover: #E68A00;
+  --color-accent-orange-light: #FFF7E6;
+  --color-accent-orange-subtle: rgba(255, 153, 0, 0.15);
 
-  /* Theme Core Palette Aliases */
-  --brand-green: #77BC1F;
-  --brand-green-hover: #65A319;
-  --brand-green-subtle: rgba(119, 188, 31, 0.15);
-  --brand-green-glow: 0 0 20px rgba(119, 188, 31, 0.35);
+  --color-navy: #232F3F;
+  --color-navy-dark: #171F2A;
+  --color-navy-light: #2D3D50;
+  --color-navy-muted: #8FA0B4;
 
-  --brand-orange: #FF9900;
-  --brand-orange-hover: #E68A00;
-  --brand-orange-subtle: rgba(255, 153, 0, 0.15);
-  --brand-orange-glow: 0 0 20px rgba(255, 153, 0, 0.35);
+  --color-brand-green: #77BC1F;
+  --color-brand-green-hover: #66A31A;
+  --color-brand-green-light: #F2F9E8;
+  --color-brand-green-subtle: rgba(119, 188, 31, 0.15);
 
-  --bg-obsidian: #0B0F14;
-  --bg-slate: #232F3F;
-  --bg-slate-light: #2A384A;
-  --bg-slate-dark: #1A232F;
-  --bg-well: #141c27;
+  --color-brand-orange: #FF9900;
+  --color-brand-orange-hover: #E68A00;
+  --color-brand-orange-light: #FFF7E6;
+  --color-brand-orange-subtle: rgba(255, 153, 0, 0.15);
 
-  /* Jira Overrides - Now mapped to the new theme */
-  --j-blue: #77BC1F;
-  --j-blue-hover: #65A319;
-  --j-blue-subtle: rgba(119, 188, 31, 0.15);
-  --j-blue-border: #77BC1F;
+  --color-brand-navy: #232F3F;
+  --color-brand-navy-dark: #171F2A;
+  --color-brand-navy-light: #2D3D50;
+  --color-brand-navy-muted: #8FA0B4;
 
-  --j-text: #FFFFFF;
-  --j-text-secondary: #CBD5E1;
-  --j-text-muted: #94A3B8;
-  --j-text-faint: #64748B;
+  --color-brand-bg: #F4F6F8;
+  --color-brand-card: #FFFFFF;
+  --color-brand-border: #DFE3E8;
 
-  --j-bg: #0B0F14;
-  --j-bg-sidebar: #1A232F;
-  --j-bg-column: #16202C;
-  --j-bg-hover: #2A384A;
-  --j-bg-active: rgba(119, 188, 31, 0.18);
-  --j-bg-card: #232F3F;
-
-  --j-border: #2D3D50;
-  --j-border-subtle: #232F3F;
-
-  /* Priority Colors */
-  --j-p1: #FF9900;
-  --j-p2: #FF7B00;
-  --j-p3: #EAB308;
-  --j-p4: #77BC1F;
-
-  /* Work Type Icons */
-  --j-task: #77BC1F;
-  --j-story: #FF9900;
-  --j-bug: #EF4444;
-  --j-subtask: #38BDF8;
-
-  /* Shadows - Rich elevated dark glows */
-  --j-shadow-card: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.08);
-  --j-shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 12px rgba(119, 188, 31, 0.22);
-  --j-shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 2px rgba(255, 153, 0, 0.25);
-  --j-shadow-dropdown: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 1px rgba(255, 255, 255, 0.12);
-
-  /* Radii */
-  --j-radius-sm: 8px;
-  --j-radius-md: 12px;
-  --j-radius-lg: 16px;
-
-  /* Dimensions */
-  --j-topbar-h: 56px;
-  --j-sidebar-w: 240px;
-  --j-col-w: 284px;
+  --font-khmer: "Kantumruy Pro", sans-serif;
+  --font-english: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", "Kantumruy Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* ==========================================================================
-   Khmer Language Typography Switcher
-   ========================================================================== */
-html[lang="kh"],
-[lang="kh"] body,
-[lang="kh"] * {
-  font-family: var(--font-kh) !important;
+/* Explicit font utility classes */
+.font-english {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-html[lang="kh"] {
-  letter-spacing: 0.01em;
+.font-khmer {
+  font-family: 'Kantumruy Pro', sans-serif !important;
 }
 
-/* Base Reset */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  background-color: var(--j-bg);
-  color: var(--j-text);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 20px;
+/* Dynamic language typography:
+   English uses Montserrat as primary with fallback to Kantumruy Pro.
+   Khmer uses Kantumruy Pro as primary with fallback to Montserrat.
+*/
+html {
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
 }
 
-#root {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+html[lang="km"],
+[lang="km"] body {
+  font-family: 'Kantumruy Pro', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Common Controls */
-button {
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-  background: none;
-  outline: none;
-  font-size: 14px;
-  line-height: 20px;
+html[lang="en"],
+[lang="en"] body {
+  font-family: 'Montserrat', 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-button:focus-visible {
-  outline: 2px solid var(--j-blue);
-  outline-offset: 1px;
+body {
+  font-family: 'Montserrat', 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #232F3F;
+  background-color: #F4F6F8;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 0.9375rem; /* 15px base size for better readability */
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-input, textarea, select {
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 20px;
-  outline: none;
-  color: var(--j-text);
+html.dark {
+  color-scheme: dark;
 }
 
-input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 2px solid var(--j-blue);
-  outline-offset: -1px;
+html.dark body {
+  color: #F8FAFC;
+  background-color: #0B1017;
 }
 
-/* Scrollbars - thin Jira style */
+/* Custom sleek scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(35, 47, 63, 0.05);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #C1C7D0;
-  border-radius: 4px;
+  background: rgba(35, 47, 63, 0.25);
+  border-radius: 6px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #A5ADBA;
+  background: #77BC1F;
 }
 
-[data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: #39424A;
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #77BC1F;
 }
 
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-  background: #4A5560;
+/* Subtle glow effects for cards & primary buttons */
+.glow-green {
+  box-shadow: 0 4px 16px rgba(119, 188, 31, 0.28);
 }
 
-/* Hide scrollbar utility */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.glow-orange {
+  box-shadow: 0 4px 16px rgba(255, 153, 0, 0.28);
 }
